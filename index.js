@@ -216,9 +216,23 @@ SonDegerlendirmeyiAl(degerlendirmeler);
 	]
 */
 
-function PuanaGoreDegerlendirmeAl(/* Kodlar buraya */) {
-  /* Kodlar buraya */
+function PuanaGoreDegerlendirmeAl(arr, sayi) {
+  for (let i = 0; i < arr.length; i++) {
+    if (
+      Math.floor(arr[i].puan) <= sayi &&
+      Math.floor(arr[i].puan) + 0.9 >= sayi
+    ) {
+      let mesaj =
+        arr[i].isim +
+        " isimli kişi " +
+        arr[i].puan +
+        " puan verdi ve şunları yazdı: " +
+        arr[i].geribildirim;
+      console.log(mesaj);
+    }
+  }
 }
+PuanaGoreDegerlendirmeAl(degerlendirmeler, 2);
 
 /*  BONUS 2:    
 	UzunDegerlendirmeleriAl fonksiyonuna aşağıdakileri uygulayın:
